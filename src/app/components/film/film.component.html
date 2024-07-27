@@ -1,0 +1,17 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{film.title}}</mat-card-title>
+    <mat-card-subtitle>Durata: {{film.duration}} <br> {{film.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      @for (screening of screeningsArray; track $index) {
+        <li>
+          Sala: {{screening.room}}
+          <br>
+          Orario: {{parseDate(screening.date)}}
+        </li>
+      }
+    </ul>
+  </mat-card-content>
+</mat-card>

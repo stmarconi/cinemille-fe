@@ -1,0 +1,16 @@
+.home-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-wrap: wrap;
+
+  .filter-section {
+    margin: 0 auto;
+
+    mat-form-field {
+      padding: 1em;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+mat-card {
+  margin: 2em;
+  background: #efeded;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid gainsboro;
+      padding: .5em 0;
+    }
+  }
+}
