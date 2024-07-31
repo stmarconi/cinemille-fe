@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit,OnDestroy {
   }
 
   public onDateChange(): void {
-    if (this.startDate && this.endDate) {
+    if (this._isFormValid(this.startDate) && this._isFormValid(this.endDate)) {
       console.log('reload');
       this._subscription.add(
         this.filmService.getFilms({startDate: this._dateToString(this.startDate), endDate: this._dateToString(this.endDate)})
@@ -80,5 +80,9 @@ export class HomeComponent implements OnInit,OnDestroy {
     this.films$.next([]);
     this.startDate = null;
     this.endDate = null;
+  }
+
+  private _isFormValid(date: Date): boolean {
+    return date && (!this.isAdmin ? date > new Date(new Date().getTime() - (24 * 60 * 60 * 1000)) : true);
   }
 }
